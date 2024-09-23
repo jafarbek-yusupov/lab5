@@ -54,16 +54,48 @@ int sod(int n){ // sum of digits
 void problem3(){
     int n, a, b, sum=0;
     cin >> n >> a >> b;
-    for(int i=1; i<n; i++){
+    for(int i=1; i<=n; i++){
         if(sod(i)>=a && sod(i)<=b)  sum +=i;
     }
     cout << sum << endl;
+}
 
+void problem4(){
+    int n, x;
+    cout << "Enter the apartment number (n) and number of apartments per floor (x): ";
+    cin >> n >> x;
+
+    if (n <= 2) {
+        cout << 1 << endl;
+    } else {
+        n -= 2;
+        int floorNumber = (n + x - 1) / x + 1;
+
+        cout << floorNumber << endl;
+    }
+
+}
+
+void problem5(){
+    int N;
+    cin >> N;
+    int count = 0;
+    int num = 1;
+    while (true) {
+        if (num % 3 != 0 && num % 10 != 3) {
+            count++;
+        }
+        if (count == N) {
+            cout << num << endl;
+            break;
+        }
+        num++;
+    }
 }
 
 
 int main() {
-    problem3();
+    problem5();
     //lab_pr4();
     return 0;
 }
