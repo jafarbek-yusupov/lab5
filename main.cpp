@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+//HW
 void problem1(){
     int n;
     cin >> n;
@@ -19,8 +20,6 @@ void problem1(){
         cout << endl;
     }
 }
-
-
 void problem2(){
     int num, t;
     cin >> t;
@@ -33,24 +32,19 @@ void problem2(){
         cout << endl;
     }
 }
-
-void lab_pr4(){
-    int n;
-    cin >> n;
-    for(int i=10; i<n; i+=10){
-        if(i%10 == 0)    cout << i << " ";
-    }
-}
-
 int sod(int n){ // sum of digits
     int sum=0;
+    /*
     while(n>0){
        sum += n%10;
        n/=10;
+    }*/
+    for(int i=n; i>0; i/=10){
+        sum += n%10;
+        n/=10;
     }
     return sum;
 }
-
 void problem3(){
     int n, a, b, sum=0;
     cin >> n >> a >> b;
@@ -59,7 +53,6 @@ void problem3(){
     }
     cout << sum << endl;
 }
-
 void problem4(){
     int n, x;
     cout << "Enter the apartment number (n) and number of apartments per floor (x): ";
@@ -75,7 +68,6 @@ void problem4(){
     }
 
 }
-
 void problem5(){
     int N;
     cin >> N;
@@ -93,10 +85,82 @@ void problem5(){
     }
 }
 
+void lab_pr4(){
+    int n;
+    cin >> n;
+    for(int i=10; i<n; i+=10){
+        if(i%10 == 0)    cout << i << " ";
+    }
+}
+void problem10(){
+    int n, posc=0, negc =0, sum=0;
+    while(n!=0){
+        cin >> n;
+        if(n>0) posc += 1;
+        else if(n<0)    negc += 1;
+        sum += n;
+    }
+    cout << posc << endl;
+    cout << negc << endl;
+    cout << posc + negc << endl;
+    cout << (float)sum/(posc + negc) << endl;
+}
+void problem11(){
+    int n;
+    cin >> n;
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++)  cout << '*';
+        cout << endl;
+    }
+}
+void problem12(){
+    int n;
+    cin >> n;
+    for(int i=0; i<n; i++){
+        for(int j=0; j<=i; j++)  cout << '*';
+        cout << endl;
+    }
+}
+void problem13(){
+    int n;
+    while(1) {
+        cin >> n;
+        if (n == 0) {
+            cout << "The depth is 0" << endl;
+            break;
+        }
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) cout << i;
+            cout << endl;
+        }
+    }
+}
+int problem16(){ // sum of digits
+    int n;
+    cin >> n;
+    int sum=0;
+    while(n>0){
+        sum += n%10;
+        n/=10;
+    }
+    return sum;
+}
+void problem17(){
+    int n, sum=0, indx= 0;
+    cin >> n;
+    while(n>0){
+        sum += (n%10) * (pow(2, indx));
+        n/=10;
+        indx++;
+    }
+    cout << "The decimal number is " << sum << endl;
+}
+
 
 int main() {
-    problem5();
-    //lab_pr4();
+    //problem17();
+    cout << sod(9023);
+    //cout << problem16() << endl;
     return 0;
 }
 /*
