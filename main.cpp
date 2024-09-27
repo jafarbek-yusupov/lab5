@@ -156,10 +156,34 @@ void problem17(){
     cout << "The decimal number is " << sum << endl;
 }
 
+bool leap_year(int n){
+    if((n%4==0 && n%100!=0) || n%400 == 0)  return true;
+    return false;
+}
+
+int month_days(int month, int year){
+    switch(month){
+        case 1: return ((leap_year(year)) ? 29 : 28);
+        case 3:
+        case 5:
+        case 8:
+        case 10:
+            return 30;
+        default:
+            return 31;
+    }
+
+}
+
+void problem24(){
+   int y, d;
+   cin >> y >> d;
+
+}
 
 int main() {
-    //problem17();
-    cout << sod(9023);
+    problem24();
+    //cout << sod(9023);
     //cout << problem16() << endl;
     return 0;
 }
